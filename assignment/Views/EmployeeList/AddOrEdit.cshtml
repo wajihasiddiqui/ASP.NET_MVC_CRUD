@@ -1,0 +1,50 @@
+﻿@model assignment.Models.employee_detail
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("AddOrEdit", "EmployeeList", FormMethod.Post, new { onsubmit = "returrn SubmitForm(this)" }))
+{
+    @Html.HiddenFor(Model => Model.Id)
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.First_Name, new { @class = "control-label" })
+        @Html.EditorFor(Model => Model.First_Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(Model => Model.First_Name)
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Last_Name, new { @class = "control-label" })
+        @Html.EditorFor(Model => Model.Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Phone_Number, new { @class = "control-label" })
+        @Html.EditorFor(Model => Model.Phone_Number, new { htmlAttributes = new { @class = "form-control" } })
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Address, new { @class = "control-label" })
+        @Html.EditorFor(Model => Model.Address, new { htmlAttributes = new { @class = "form-control" } })
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Age, new { @class = "control-label" })
+        @Html.EditorFor(Model => Model.Age, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(Model => Model.Age)
+
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+        <input type="reset" value="Reset" class="btn"/>
+    </div>
+}
+
